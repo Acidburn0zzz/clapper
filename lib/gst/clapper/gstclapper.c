@@ -761,6 +761,7 @@ gst_clapper_set_property (GObject * object, guint prop_id,
     case PROP_SEEK_MODE:
       g_mutex_lock (&self->lock);
       self->seek_mode = g_value_get_enum (value);
+      GST_DEBUG_OBJECT (self, "Set seek_mode=%u", self->seek_mode);
       g_mutex_unlock (&self->lock);
       break;
     default:
